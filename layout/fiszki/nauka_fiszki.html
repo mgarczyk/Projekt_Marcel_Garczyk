@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+      .scene {
+          perspective: 800px;
+        }
+
+      .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transform-origin: center right;
+        transition: transform 1s;
+        border-radius: 1.5rem;
+      }
+
+      .card.is-flipped {
+        transform: translateX(-100%) rotateY(-180deg);
+      }
+
+      .card__face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        line-height: 260px;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+        backface-visibility: hidden;
+        border: solid 2px #108E84;
+        border-radius: 1.5rem;
+        
+      }
+
+      .card__face--front {
+        background: white;
+        color: #108E84;
+      
+
+      }
+
+      .card__face--back {
+        background: white;
+        color: #108E84;
+        transform: rotateY(180deg);
+      }
+
+      </style>
+    </head>
+  <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 margin">
+        <div class="h_class">
+              <h4>Fiszki</h4><br>
+        </div>
+        <br>
+        <div class="col-lg-12 scene scene--card">
+            <div class="card">
+              <div class="card__face card__face--front">Polski</div>
+              <div class="card__face card__face--back">Angielski</div>
+            </div>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary">Kolejne słówko</button><br><br>
+        <button type="button" class="btn btn-primary">Poprzednie słówko</button><br><br>
+        <a href="dzial_fiszki.html"><button type="button" class="btn-outline-primary">Wybierz inny dział</button></a>
+      </div>
+    </div>
+  </div>           
+</body>
+<script>
+        var card = document.querySelector('.card');
+        card.addEventListener( 'click', function() {
+          card.classList.toggle('is-flipped');
+        });
+</script>
+</html>
