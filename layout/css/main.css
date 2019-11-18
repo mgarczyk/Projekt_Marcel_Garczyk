@@ -4,11 +4,6 @@ body {
   background-color: #D0D8D9;
 }
 
-h4 {
-  font-weight: bold;
-  color: white;
-}
-
 a {
   text-decoration: none;
 }
@@ -16,12 +11,14 @@ a {
 .margin {
   margin-left: auto;
   margin-right: auto;
+}
+
+.margin-top {
   margin-top: 20vh;
 }
 
 .btn-primary {
   color: white;
-  width: 100%;
   border-radius: 1.5rem;
   padding: 1.5%;
   border: #108E84 2px solid;
@@ -29,10 +26,19 @@ a {
   font-weight: bold;
 }
 
+.btn-max {
+  width: 100%;
+}
+
+.btn-md {
+  font-size: 15px;
+  border-radius: 0.5rem;
+}
+
 .btn-primary:hover {
   background-color: white;
-  border: #0339A6 solid 2px;
-  color: #0339A6;
+  border: #1C23A6 solid 2px;
+  color: #1C23A6;
 }
 
 .btn-outline-primary {
@@ -46,8 +52,8 @@ a {
 }
 
 .btn-outline-primary:hover {
-  background-color: #0339A6;
-  border: #0339A6 solid 2px;
+  background-color: #1C23A6;
+  border: #1C23A6 solid 2px;
   color: white;
 }
 
@@ -69,21 +75,81 @@ a {
   padding-top: 15px;
   background-color: #108E84;
   width: 100%;
+  border: solid 2px #108E84;
   border-radius: 1.5rem;
   text-align: center;
   height: 60px;
+  color: white;
+}
+
+.h_class_outline {
+  padding-top: 15px;
+  background-color: white;
+  width: 100%;
+  border: #108E84 solid 2px;
+  border-radius: 1.5rem;
+  text-align: center;
+  height: 60px;
+  color: #108E84;
+}
+
+h4 {
+  font-weight: bold;
 }
 
 .display_div {
   width: 100%;
-  height: 100%;
+  height: auto;
   color: #108E84;
+  line-height: 30px;
   text-align: center;
   font-weight: bold;
-  font-size: 40px;
   backface-visibility: hidden;
   border: solid 2px #108E84;
   border-radius: 1.5rem;
   background-color: white;
-  padding: 10px;
+  padding: 15px;
+  text-align: justify;
+}
+
+.display_div_outline {
+  width: 100%;
+  height: auto;
+  color: white;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  backface-visibility: hidden;
+  border: solid 2px #108E84;
+  border-radius: 1.5rem;
+  background-color: white;
+  padding: 15px;
+  text-align: justify;
+}
+
+.navbar-light {
+  background-color: #108E84;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #1C23A6;
+}
+
+.navbar .navbar-brand {
+  color: white;
+  font-weight: bold;
+}
+
+.navbar .navbar-brand:hover {
+  color: #1C23A6;
+}
+
+.border-bottom {
+  border-bottom: solid 2px #108E84;
 }

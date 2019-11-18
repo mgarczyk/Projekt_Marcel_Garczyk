@@ -1,13 +1,9 @@
 $main-color: #108E84;
-$button-onclik-color: #0339A6;
+$button-onclik-color: #1C23A6; //#0B537F;
 body{
     font-family: 'Helvetica';
     font-size: 17px;
     background-color: #D0D8D9;
-}
-h4{
-  font-weight: bold;
-  color: white;
 }
 a{
   text-decoration: none;
@@ -15,22 +11,33 @@ a{
 .margin{
   margin-left: auto;
   margin-right: auto;
+}
+.margin-top{
   margin-top: 20vh;
 }
+//przyciski
 .btn-primary{
   color:white;
-  width: 100%;
   border-radius: 1.5rem;
   padding: 1.5%;
   border: $main-color 2px solid;
   background-color: $main-color;
   font-weight: bold;
 }
+.btn-max{
+  width: 100%;
+}
+.btn-md{
+  font-size: 15px;
+  border-radius: 0.5rem;
+}
+
 .btn-primary:hover{
   background-color: white;
   border: $button-onclik-color solid 2px;
   color: $button-onclik-color;
 }
+
 .btn-outline-primary{
   width: 100%;
   border-radius: 1.5rem;
@@ -45,6 +52,7 @@ a{
   border: $button-onclik-color solid 2px;
   color: white;
 }
+//formularze
 .form-control{
     border: $main-color 1.5px solid;
     border-radius: 1.5rem;
@@ -56,24 +64,83 @@ a{
 .ForgetPwd{
   color: $main-color;
 }
+//nagłówki
 .h_class{
   padding-top: 15px;
   background-color: $main-color;
   width: 100%;
+  border: solid 2px $main-color;
   border-radius: 1.5rem;
   text-align: center;
   height: 60px;
+  color: white;
 }
+.h_class_outline{
+  padding-top: 15px;
+  background-color: white;
+  width: 100%;
+  border: $main-color solid 2px;
+  border-radius: 1.5rem;
+  text-align: center;
+  height: 60px;
+  color: $main-color;
+}
+h4{
+  font-weight: bold;
+}
+//div
 .display_div{
     width: 100%;
-    height: 100%;
+    height: auto;
     color: $main-color;
+    line-height: 30px;
     text-align: center;
     font-weight: bold;
-    font-size: 40px;
     backface-visibility: hidden;
     border: solid 2px #108E84;
     border-radius: 1.5rem;
     background-color: white;
-    padding: 10px;
+    padding: 15px;
+    text-align: justify;
 }
+.display_div_outline{
+  width: 100%;
+  height: auto;
+  color: white;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  backface-visibility: hidden;
+  border: solid 2px $main-color;
+  border-radius: 1.5rem;
+  background-color: white;
+  padding: 15px;
+  text-align: justify;
+}
+//navbar
+.navbar-light{
+  background-color: $main-color;
+}
+.navbar-light .navbar-nav .nav-link {
+  color:white;
+  font-size: 17px;
+  font-weight: bold;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color:$button-onclik-color;
+  
+}
+.navbar .navbar-brand{
+  color: white;
+  font-weight: bold;
+  
+}
+.navbar .navbar-brand:hover{
+  color:$button-onclik-color;
+  
+}
+//border
+.border-bottom{
+  border-bottom: solid 2px $main-color;
+}
+
