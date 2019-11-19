@@ -2,19 +2,47 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 <link rel="stylesheet" href="../css/main.css">
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="../index.html">Strona główna</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse navbar" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="../inne_podstrony/o_projekcie.html">O stronie</a>
-        <a class="nav-item nav-link" href="../fiszki/dzial_fiszki.html">Fiszki</a>
-        <a class="nav-item nav-link"  href="../kurs/tworzenie_kurs.html">Nowy kurs</a>
-        <a class="nav-item nav-link"  href="../kurs/wybor_kurs.html">Kontynuuj kurs</a>
-        <a class="nav-item nav-link"  href="../inne_podstrony/kontakt.html">Kontakt</a>
-      </div>
-    </div>
-  </nav>
+        <a class="navbar-brand" href="../index.html">Strona domowa</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../inne_podstrony/o_projekcie.html">O stronie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../fiszki/dzial_fiszki.html">Fiszki</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="../kurs/tworzenie_kurs.html">Stwórz kurs</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="../kurs/wybor_kurs.html">Kontunuuj kurs</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="../inne_podstrony/kontakt.html">Kontakt</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../logowanie/logowanie.html">
+                        <button type="button" class="btn btn-primary btn-md">
+                               Logowanie<span class="fas fa-sign-in-alt"></span>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="../logowanie/logowanie.html">
+                            <button type="button" class="btn btn-primary btn-md">
+                                    Rejstracja<span class="fas fa-user-plus"></span>
+                            </button>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+</nav>

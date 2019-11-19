@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="../css/main.css">
+        
     </head>
     <body>
       <div class="container">
@@ -14,19 +15,37 @@
                   </div><br>
                   <div class="col-md-12 display_div">
                     <div class="row">
-                        <div class="col-xs-12 margin">
-                          <input id="tworca"  type="hidden" value="Marcel Garczyk">Twórca: Marcel Garczyk<br><br>
-                          <input id="email"   type="hidden" value="mail@mail.com">E-mail: mail@mail.com<br><br>
-                          <input id="telefon" type="hidden" value="123 456 789">Telefon: 123 456 789<br><br>
-                          <input id="github"  type="hidden" value="https://github.com/mgarczyk">Github: mgarczyk<br><br>
+                        <div class="col-md-12 text-center margin">
+                          <input id="tworca" type="hidden" value="Marcel Garczyk">
+                          <p>Twórca: Marcel Garczyk</p>
+                          <button class="btn-primary btn-sm"  onclick="copy_tworca()">Kopiuj</button><br>
                         </div>
-                        <div class="col-xs-12 text-center margin">
-                            <button class="btn-primary btn-md" onclick="copy_tworca()">Kopiuj</button><br><br>
-                             <button class="btn-primary btn-md" onclick="copy_email()">Kopiuj</button><br><br>
-                             <button class="btn-primary btn-md" onclick="copy_telefon()">Kopiuj</button><br><br>
-                             <button class="btn-primary btn-md" onclick="copy_github()">Kopiuj</button><br><br>
+                      </div>
+                      <hr>
+                      <div class="row">
+                          <div class="col-md-12 text-center margin">
+                              <input id="email"   type="hidden" value="mail@mail.com">
+                              <p>E-mail: mail@mail.com</p>
+                            <button class="btn-primary btn-sm"  onclick="copy_mail()">Kopiuj</button><br>
+                          </div>
                         </div>
-                    </div>
+                        <hr>
+                        <div class="row brd-bottom">
+                            <div class="col-md-12 text-center margin">
+                                <input id="telefon"  type="hidden" value="123 456 789">
+                                <p>Numer telefonu: 123 456 789</p>
+                              <button class="btn-primary btn-sm"  onclick="copy_telefon()">Kopiuj</button><br>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="row brd-bottom">
+                              <div class="col-md-12 text-center margin">
+                                <input id="github"  type="hidden" value="https://github.com/mgarczyk">
+                                <p>Github: mgarczyk </p>
+                                <button class="btn-primary btn-sm" onclick="copy_github()">Kopiuj</button><br>
+                              </div>
+                            </div>
+                            <hr>
                 </div>
                 <br>
                 <a href="../index.html"><input type="button" class="btn-primary btn-max" value="Strona główna"/></a><br><br>
