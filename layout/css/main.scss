@@ -1,25 +1,20 @@
 $main-color: #108E84;
 $button-onclik-color: #1C23A6; //#0B537F;
+$background-body:#D0D8D9;
 body{
     font-family: 'Helvetica';
     font-size: 17px;
-    background-color: #D0D8D9;
+    background-color: $background-body;
 }
 a{
   text-decoration: none;
 }
+//margin
 .margin{
   margin-left: auto;
   margin-right: auto;
 }
 
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
 .margin-top{
   margin-top: 20vh;
 }
@@ -34,6 +29,9 @@ a{
 }
 .btn-max{
   width: 100%;
+}
+.btn-half{
+  width: 50%;
 }
 .btn-primary:hover{
   background-color: white;
@@ -86,9 +84,10 @@ a{
   height: 60px;
   color: $main-color;
 }
-h4{
+h4, h3, h2{
   font-weight: bold;
 }
+
 //div
 .display_div{
     width: 100%;
@@ -117,6 +116,17 @@ h4{
   padding: 15px;
   text-align: justify;
 }
+.div-none-background{
+  width: 100%;
+  height: auto;
+  color: $background-body;
+  line-height: 30px;
+  font-weight: bold;
+  backface-visibility: hidden;
+  padding: 15px;
+  text-align: justify;
+
+}
 //navbar
 .navbar-light{
   background-color: $main-color;
@@ -124,18 +134,28 @@ h4{
 .navbar-light .navbar-nav .nav-link {
   color:white;
   font-weight: bold;
+  border-bottom: solid 2px transparent;
 }
+
 .navbar-light .navbar-nav .nav-link:hover {
-  color:$button-onclik-color;
+  color: white;
+}
+
+.navbar-light .navbar-nav .navbar-line:hover {
+  border-bottom: solid 2px white;
+
   
 }
 .navbar .navbar-brand{
   color: white;
   font-weight: bold;
+  border-bottom: solid 2px transparent;
   
 }
 .navbar .navbar-brand:hover{
-  color:$button-onclik-color;
+  color:white;
+  border-bottom: solid 2px white;
+
   
 }
 
@@ -147,6 +167,34 @@ h4{
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   
 } 
+//footer
+
+.footer {
+   background-color: white; 
+   padding-top: 80px; 
+   color: $main-color; 
+  }
+.footer-widget{ 
+  padding-bottom: 50px; 
+}
+.footer-title 
+{ font-size: 24px; 
+  font-weight: bold; 
+  margin-bottom: 30px;
+  color: $main-color; }
+
+.footer-widget ul li a 
+{ 
+  color: $main-color; 
+  display: block; 
+  font-weight: bold; 
+  line-height: 35px;;
+}
+.small-footer{
+  background-color: $background-body;
+  font-size: 14px;
+  font-weight: bold;
+}
 //hr
 hr{
   border: solid 1px $main-color;
@@ -163,7 +211,9 @@ hr{
   background-color: white;
   text-align: center;
   height: auto;
-
 }
-
+//list
+.list-unstyled{
+  list-style: none;
+}
 

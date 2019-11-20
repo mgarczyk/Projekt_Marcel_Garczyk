@@ -13,14 +13,6 @@ a {
   margin-right: auto;
 }
 
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
 .margin-top {
   margin-top: 20vh;
 }
@@ -36,6 +28,10 @@ a {
 
 .btn-max {
   width: 100%;
+}
+
+.btn-half {
+  width: 50%;
 }
 
 .btn-primary:hover {
@@ -95,7 +91,7 @@ a {
   color: #108E84;
 }
 
-h4 {
+h4, h3, h2 {
   font-weight: bold;
 }
 
@@ -128,6 +124,17 @@ h4 {
   text-align: justify;
 }
 
+.div-none-background {
+  width: 100%;
+  height: auto;
+  color: #D0D8D9;
+  line-height: 30px;
+  font-weight: bold;
+  backface-visibility: hidden;
+  padding: 15px;
+  text-align: justify;
+}
+
 .navbar-light {
   background-color: #108E84;
 }
@@ -135,19 +142,26 @@ h4 {
 .navbar-light .navbar-nav .nav-link {
   color: white;
   font-weight: bold;
+  border-bottom: solid 2px transparent;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #1C23A6;
+  color: white;
+}
+
+.navbar-light .navbar-nav .navbar-line:hover {
+  border-bottom: solid 2px white;
 }
 
 .navbar .navbar-brand {
   color: white;
   font-weight: bold;
+  border-bottom: solid 2px transparent;
 }
 
 .navbar .navbar-brand:hover {
-  color: #1C23A6;
+  color: white;
+  border-bottom: solid 2px white;
 }
 
 .navbar-light .navbar-toggler {
@@ -156,6 +170,36 @@ h4 {
 
 .navbar-light .navbar-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.footer {
+  background-color: white;
+  padding-top: 80px;
+  color: #108E84;
+}
+
+.footer-widget {
+  padding-bottom: 50px;
+}
+
+.footer-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #108E84;
+}
+
+.footer-widget ul li a {
+  color: #108E84;
+  display: block;
+  font-weight: bold;
+  line-height: 35px;
+}
+
+.small-footer {
+  background-color: #D0D8D9;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 hr {
@@ -173,4 +217,8 @@ hr {
   background-color: white;
   text-align: center;
   height: auto;
+}
+
+.list-unstyled {
+  list-style: none;
 }
