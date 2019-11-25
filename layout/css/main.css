@@ -4,10 +4,6 @@ body {
   background-color: #D0D8D9;
 }
 
-a {
-  text-decoration: none;
-}
-
 .margin {
   margin-left: auto;
   margin-right: auto;
@@ -173,37 +169,53 @@ h4, h3, h2 {
 }
 
 .footer {
-  background-color: white;
+  clear: both;
+  width: 100%;
+  background-color: #108E84;
   padding-top: 80px;
-  color: #108E84;
+  color: white;
 }
 
 .footer-widget {
-  padding-bottom: 50px;
+  padding-bottom: 5px;
 }
 
 .footer-title {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 30px;
-  color: #108E84;
+  margin-bottom: 15px;
+  color: white;
 }
 
 .footer-widget ul li a {
-  color: #108E84;
+  color: white;
   display: block;
   font-weight: bold;
   line-height: 35px;
+  font-size: 16px;
+  border-bottom: solid 2px transparent;
+}
+
+.footer-widget ul li a:hover {
+  display: block;
+  font-weight: bold;
+  line-height: 35px;
+  font-size: 16px;
+  border-bottom: solid 2px white;
+  text-decoration: none;
 }
 
 .small-footer {
-  background-color: #D0D8D9;
   font-size: 14px;
   font-weight: bold;
 }
 
+.footer-margin {
+  margin-top: 35vh;
+}
+
 hr {
-  border: solid 1px #108E84;
+  border: solid 1px white;
   border-radius: 1.5rem;
 }
 
