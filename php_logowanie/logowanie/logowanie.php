@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -17,12 +18,13 @@
                       <h4>Logowanie</h4><br>
                   </div>
                   <br>
-                  <form class="text-center">
-                    <input type="email" class="form-control" placeholder="E-mail" value="" /><br>
-                    <input type="password" class="form-control" placeholder="Hasło" value="" /><br>
+                  <form class="text-center" method="post">
+                    <input type="email" class="form-control" placeholder="E-mail" value="" name="email" /><br>
+                    <input type="password" class="form-control" placeholder="Hasło" value="" name="password" /><br>
                     <input type="submit" class="btn-primary btn-max" value="Zaloguj" /><br><br>
                     <a href="rejstracja.php"><input type="button" class="btn-outline-primary btn-max" value="Zarejstruj się" /></a><br><br>
                     <a href="haslo.php"><input type="button" class="btn-primary btn-max" value="Zapomniałeś hasła?" /></a><br><br>
+                    <?php require_once("../pliki/logowanie/logowanie_kod.php") ?>
                   </form>
                 </div>
               </div>

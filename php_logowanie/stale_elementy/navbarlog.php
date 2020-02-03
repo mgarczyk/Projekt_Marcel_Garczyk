@@ -31,13 +31,13 @@
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link navbar-line" href="../logowanie/logowanie.php">
-                        <span class="fas fa-sign-in-alt"></span><span class="white-space"> Logowanie</span>
+                    <a class="nav-link navbar-line" href="../pliki/logowanie/wyloguj.php">
+                        <span class="fas fa-sign-in-alt"></span><span class="white-space">Wyloguj</span>
                      </a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link navbar-line" href="../logowanie/rejstracja.php">
-                            <span class="fas fa-user-plus white-space"></span><span class="white-space">Rejstracja</span>
+                        <a class="nav-link">
+                            <span class="fas fa-user-plus white-space "></span><span class="white-space"><?php echo ' '.$_SESSION["username"]; ?></span>
                         </a>
                 </li>
             </ul>
