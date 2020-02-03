@@ -15,8 +15,8 @@
                     <div class="footer-title">Zacznij naukę</div>
                     <ul class="list-unstyled">
                         <li><a href="../fiszki/fiszki_dzial.php">Ucz się z fiszek</li></a>
-                        <li><a href="../logowanie/logowanie.php">Kontyunuuj kurs</li></a>
-                        <li><a href="../logowanie/logowanie.php">Stwórz kurs</li></a>
+                        <li><a href="../kurs/nauka_kurs.php">Kontyunuuj kurs</li></a>
+                        <li><a href="../kurs/tworzenie_kurs.php">Stwórz kurs</li></a>
                     </ul>
                     </div>
                 </div>

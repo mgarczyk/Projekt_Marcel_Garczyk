@@ -11,6 +11,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
   if($row==1){
     $_SESSION["username"] = $email;
     $query = "UPDATE uzytkownik SET ID_status_uzytkownik = 1 WHERE Login = '$email'";
+    mysqli_query($connect, $query);
     header("location: ../index/indexlog.php");
     }else{
     echo "<h3>Podano nieprawidłowe hasło lub login</h3>";

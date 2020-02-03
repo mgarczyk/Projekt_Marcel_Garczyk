@@ -17,7 +17,7 @@
                     <a class="nav-link navbar-line" href="../inne_podstrony/o_projekcie.php">O stronie</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar-line" href="../fiszki/dzial_fiszki.php">Fiszki</a>
+                    <a class="nav-link navbar-line" href="../fiszki/fiszki_dzial.php">Fiszki</a>
                 </li>
                 <li class="nav-item">
                         <a class="nav-link navbar-line" href="../kurs/tworzenie_kurs.php">Stwórz kurs</a>

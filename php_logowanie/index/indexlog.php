@@ -40,6 +40,12 @@
             </div>
         </div>
     </div>
-    <?php require_once("../stale_elementy/footer.php") ?>
+    <?php
+    if(isset($_SESSION["username"])){
+      require_once("../stale_elementy/footerlog.php");
+      }else{
+      require_once("../stale_elementy/footer.php");
+    }
+    ?>
     </body>
 </html>

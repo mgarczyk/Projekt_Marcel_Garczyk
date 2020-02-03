@@ -15,7 +15,13 @@
         <meta name="author" content="Marcel Garczyk">
     </head>
     <body  style="background-image: url(tlo3.jpg);">
-      <?php require_once("../stale_elementy/navbar.php") ?>
+      <?php
+      if(isset($_SESSION["username"])){
+        require_once("../stale_elementy/navbarlog.php");
+        }else{
+        require_once("../stale_elementy/navbar.php");
+        }
+      ?>
       <div class="container">
             <div class="row">
                 <div class="col-md-12 margin" style="margin-top: 30vh;">
@@ -39,6 +45,12 @@
             </div>
         </div>
     </div>
-    <?php require_once("../stale_elementy/footer.php") ?>
+    <?php
+    if(isset($_SESSION["username"])){
+      require_once("../stale_elementy/footerlog.php");
+      }else{
+      require_once("../stale_elementy/footer.php");
+    }
+    ?>
     </body>
 </html>
