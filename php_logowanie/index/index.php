@@ -16,7 +16,7 @@
     </head>
     <body  style="background-image: url(tlo3.jpg);">
       <?php
-      if(isset($_SESSION["username"])){
+      if(isset($_SESSION["email"])){
         require_once("../stale_elementy/navbarlog.php");
         }else{
         require_once("../stale_elementy/navbar.php");
@@ -33,12 +33,12 @@
                 </div><br><br>
                 <div class="col-md-3 margin div-none-background text-center">
                     <h3>Ucz się</h3><br>
-                    <p class="text-justify">Możesz uczyć się za pomocą fiszek tworzonych przezemnie lub kursów sprawdzających pisownie</p><br>
-                    <a href="../fiszki/dzial_fiszki.php"><input type="button" class="btn-primary btn-half" value="Zacznij naukę"></a>
+                    <p class="text-justify">Możesz uczyć się za pomocą fiszek tworzonych przezemnie lub kursów sprawdzających pisownie.</p><br>
+                    <a href="../fiszki/fiszki_dzial.php"><input type="button" class="btn-primary btn-half" value="Zacznij naukę"></a>
                 </div>
                 <div class="col-md-3 margin div-none-background text-center">
                     <h3>Zarejstruj się</h3><br>
-                    <p class="text-justify">Załóż darmowe konto i korzystaj z możliwości nauki setek słówek, które napewno w przyszłości Ci się przydadzą</p><br>
+                    <p class="text-justify">Załóż darmowe konto i korzystaj z możliwości nauki setek słówek, które napewno w przyszłości Ci się przydadzą.</p><br>
                     <a href="../logowanie/rejstracja.php"><input type="button" class="btn-primary btn-half" value="Zarejstruj się"></a>
                 </div>
                 </div>
@@ -46,7 +46,7 @@
         </div>
     </div>
     <?php
-    if(isset($_SESSION["username"])){
+    if(isset($_SESSION["email"])){
       require_once("../stale_elementy/footerlog.php");
       }else{
       require_once("../stale_elementy/footer.php");

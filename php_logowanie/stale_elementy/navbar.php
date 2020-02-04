@@ -37,7 +37,7 @@
                 </li>
                 <li class="nav-item">
                         <a class="nav-link navbar-line" href="../logowanie/rejstracja.php">
-                            <span class="fas fa-user-plus white-space"></span><span class="white-space">Rejstracja</span>
+                            <span class="fas fa-user-plus white-space"></span><span class="white-space"> Rejstracja</span>
                         </a>
                 </li>
             </ul>

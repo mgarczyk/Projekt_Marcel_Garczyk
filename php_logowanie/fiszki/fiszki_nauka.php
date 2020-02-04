@@ -65,7 +65,13 @@
       </style>
     </head>
   <body>
-  <?php require_once("../stale_elementy/navbar.php") ?>
+    <?php
+    if(isset($_SESSION["email"])){
+      require_once("../stale_elementy/navbarlog.php");
+      }else{
+      require_once("../stale_elementy/navbar.php");
+      }
+    ?>
   <div class="container">
     <div class="row">
       <div class="col-lg-6 margin margin-top">
@@ -89,7 +95,13 @@
     </div>
   </div>
 </body>
-<?php require_once("../stale_elementy/footer.php") ?>
+<?php
+if(isset($_SESSION["email"])){
+  require_once("../stale_elementy/footerlog.php");
+  }else{
+  require_once("../stale_elementy/footer.php");
+}
+?>
 <script>
         var card = document.querySelector('.card');
         card.addEventListener( 'click', function() {

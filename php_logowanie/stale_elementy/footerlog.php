@@ -31,10 +31,10 @@
                 </div>
                 <div class="col-md-4 text-left">
                     <div class="footer-widget">
-                        <div class="footer-title">Zarejstruj się</div>
+                        <div class="footer-title">Zalogowano jako</div>
                         <ul class="list-unstyled">
-                            <li><a href="../logowanie/rejstracja.php">Rejstracja</li></a>
-                            <li><a href="../logowanie/logowanie.php">Logowanie</li></a>
+                          <li><a style="border: 0px;"><?php echo ' '.$_SESSION["email"]; ?></a></li>
+                          <li><a href="../pliki/logowanie/wyloguj.php">Wyloguj</li></a>
                         </ul>
                     </div>
                 </div>

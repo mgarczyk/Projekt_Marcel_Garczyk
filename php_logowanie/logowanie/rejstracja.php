@@ -18,12 +18,20 @@
                       <h4>Rejstracja</h4><br>
                   </div>
                   <br>
-                  <form class="text-center" method="post">
+                  <form class="text-center" method="post" name="rejstracja">
                     <input type="email" class="form-control form-rounded" placeholder="Podaj e-mail" value="" name="email"/><br>
-                    <input type="password" class="form-control" placeholder="Podaj hasło" value="" name="password" /><br>
+                    <input type="password" class="form-control" placeholder="Podaj hasło" value="" name="password" onclick="haslo()"/><br>
+                    <div id="reguly"></div>
                     <input type="password" class="form-control" placeholder="Powtórz hasło" value="" name="password_again"/><br>
                     <input type="submit" class="btn-primary btn-max" value="Zarejstruj" /><br><br>
                     <a href="logowanie.php"><input type="button" class="btn-outline-primary btn-max" value="Masz już konto? Zaloguj się" /></a><br><br>
+                    <script type="text/javascript">
+                      function haslo(){
+                        var element = document.getElementById('reguly');
+                        element.innerHTML = "Użyj od 8 do 20 znaków. Aby zwiększyć poziom bezpieczeństwa hasła, stosuj małe i duże litery, cyfry oraz znaki specjalne.<br><br>";
+
+                      }
+                    </script>
                     <?php
                       require_once('../pliki/logowanie/rejstracja_kod.php');
                      ?>
