@@ -1,14 +1,12 @@
 <?php
 require_once('../pliki/logowanie/connect.php');
 if(!empty($_POST["email"]) && !empty($_POST["password"])){
-  $email = mysqli_real_escape_string($connect, $_POST["email"]);
-  $password = mysqli_real_escape_string($connect, $_POST["password"]);
-  $email = trim(stripslashes($email));
-  $password = trim(stripcslashes($password));
-  $query = "SELECT Login FROM uzytkownik WHERE Login = '$email' && Haslo = '$password';";
+  $email = trim(stripslashes(mysqli_real_escape_string($connect, $_POST["email"])));
+  $password = trim(stripslashes(mysqli_real_escape_string($connect, $_POST["password"])));
+  $query = "SELECT Haslo FROM uzytkownik WHERE Login = '$email';";
   $result = mysqli_query($connect,$query);
-  $row = mysqli_num_rows($result);
-  if($row==1){
+  $row = mysqli_fetch_assoc($result);
+  if(password_verify($password,$row["Haslo"]) == true){ //sprawdzanie czy hash hasła z bazy danych  zgadza się z hashem hasła podanego przez użytkownika
     $_SESSION["email"] = $email;
     $query = "UPDATE uzytkownik SET ID_status_uzytkownik = 1 WHERE Login = '$email'";
     mysqli_query($connect, $query);
