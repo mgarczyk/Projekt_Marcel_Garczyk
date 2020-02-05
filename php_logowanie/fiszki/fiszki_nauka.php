@@ -66,7 +66,7 @@
     </head>
   <body>
     <?php
-    if(isset($_SESSION["email"])){
+    if(isset($_SESSION["email"]) && isset($_SESSION["logged"])){
       require_once("../stale_elementy/navbarlog.php");
       }else{
       require_once("../stale_elementy/navbar.php");
@@ -97,7 +97,7 @@
 </body>
 <?php
 if(isset($_SESSION["email"])){
-  require_once("../stale_elementy/footerlog.php");
+  require_once("../stale_elementy/footerlog.php" && $_SESSION["logged"] == true);
   }else{
   require_once("../stale_elementy/footer.php");
 }

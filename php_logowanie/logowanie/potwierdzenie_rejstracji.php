@@ -2,7 +2,7 @@
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
-        <title>Odzyskaj hasło</title>
+        <title>Logowanie</title>
         <link rel="stylesheet" href="../pliki/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/main.css">
         <meta name="description" content="Nauka angielskiego technicznego dla informatyków.">
@@ -15,19 +15,18 @@
             <div class="row">
                 <div class="col-lg-6 login-form-1 margin margin-top">
                   <div class="h_class">
-                      <h4>Resetowanie hasła</h4><br>
+                      <h4>Potwierdzenie rejstracji</h4><br>
                   </div>
                   <br>
+                  <div class="col-lg-12 display_div" style="text-align: justify;">
+                     Zaloguj się na założone wcześniej konto, aby potwierdzić rejstrację i móc korzystać z serwisu bez ogranieczeń.
+                  </div><br>
                   <form class="text-center" method="post">
-                    <div class="col-md-12 display_div" style="font-size: 16px ;">
-                      Wpisz swój adres e-mail, który był przez Ciebie użyty do rejestracji.
-                      Wyślemy do Ciebie wiadomość e-mail umożliwiającą zresetowanie hasła.
-                    </div><br>
-                    <input type="email" class="form-control" placeholder="Podaj e-mail" value="" name="email" /><br>
-                    <input type="submit" class="btn-primary btn-max" value="Wyślij"/><br><br>
-                    <a href="logowanie.php"><input type="button" class="btn-primary btn-max" value="Powrót do logowania" /></a><br><br>
-                    <a href="../index/index.php"><input type="button" class="btn-outline-primary btn-max" value="Strona główna"/></a><br><br>
-                    <?php require_once("../pliki/logowanie/haslo_odzyskanie_email.php") ?>
+                    <input type="email" class="form-control" placeholder="E-mail" value="" name="email" /><br>
+                    <input type="password" class="form-control" placeholder="Hasło" value="" name="password" /><br>
+                    <input type="submit" class="btn-primary btn-max" value="Zaloguj" /><br><br>
+                    <a href="haslo.php"><input type="button" class="btn-primary btn-max" value="Zapomniałeś hasła?" /></a><br><br>
+                    <?php require_once("../pliki/logowanie/rejstracja_potwierdz.php") ?>
                   </form>
                 </div>
               </div>

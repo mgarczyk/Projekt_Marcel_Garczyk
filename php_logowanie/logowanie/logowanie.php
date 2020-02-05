@@ -24,6 +24,7 @@
                     <input type="submit" class="btn-primary btn-max" value="Zaloguj" /><br><br>
                     <a href="rejstracja.php"><input type="button" class="btn-outline-primary btn-max" value="Zarejstruj się" /></a><br><br>
                     <a href="haslo.php"><input type="button" class="btn-primary btn-max" value="Zapomniałeś hasła?" /></a><br><br>
+                    <a href="../index/index.php"><input type="button" class="btn-outline-primary btn-max" value="Strona główna"/></a><br><br>
                     <?php require_once("../pliki/logowanie/logowanie_kod.php") ?>
                   </form>
                 </div>

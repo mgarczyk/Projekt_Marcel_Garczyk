@@ -12,7 +12,7 @@
     </head>
     <body>
       <?php
-      if(isset($_SESSION["email"])){
+      if(isset($_SESSION["email"]) && isset($_SESSION["logged"])){
         require_once("../stale_elementy/navbarlog.php");
         }else{
         require_once("../stale_elementy/navbar.php");
@@ -30,7 +30,7 @@
                       <option value="1">Kurs 1: Sytemy Operacyjne, z Polski na Angielski</option>
                       <option value="2">Kurs 2: Urządzenia Techniki Komputerowej, z Angielski na Polski</option> <!-- Przykładowe dane z bazy -->
                     </select><br>
-                    <a href="nauka_kurs.html"><input type="button" class="btn-primary btn-max" value="Rozpocznij naukę" /></a><br><br>
+                    <a href="nauka_kurs.php"><input type="button" class="btn-primary btn-max" value="Rozpocznij naukę" /></a><br><br>
                   </form>
                   <a href="tworzenie_kurs.php"><input type="button" class="btn-outline-primary btn-max" value="Stwórz inny kurs" /></a><br><br>
                   <a href="../index/index.php"><input type="button" class="btn-primary btn-max" value="Strona główna" /></a><br><br>
@@ -38,7 +38,7 @@
               </div>
           </div>
           <?php
-          if(isset($_SESSION["email"])){
+          if(isset($_SESSION["email"]) && isset($_SESSION["logged"])){
             require_once("../stale_elementy/footerlog.php");
             }else{
             require_once("../stale_elementy/footer.php");

@@ -7,16 +7,16 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["passw
     $regex = '/^(?=.*[!@#$%^&*-])(?=.*[0-9])(?=.*[A-Z]).{8,20}$/';
     $query = "SELECT Login FROM uzytkownik WHERE Login = '$email';";
     $result = mysqli_query($connect, $query);   //sprawdzenie czy dany email nie znajduje się już w bazie danych
-    if (mysqli_num_rows($result)==0){
+    if (mysqli_num_rows($result)==1){
       if($password==$password_again){
         if(preg_match($regex, $password)){
           $password = password_hash($password, PASSWORD_ARGON2ID);
           $date = date('Y-m-d', time());
-          $query = "INSERT INTO uzytkownik(Login, Haslo, ID_status_uzytkownik, Data_Ostatniego_Logowania, ID_uprawnienia) VALUES ('$email', '$password', 3, '$date', 1);";  //wpisz użytkownika do bazy
+          $query = "UPDATE uzytkownik SET Haslo = '$password', ID_status_uzytkownik = 2 WHERE Login = '$email'";
           $result = mysqli_query($connect,$query);
           $_SESSION["email"] = $email;
           mysqli_close($connect);
-          header("location: ../pliki/logowanie/rejstracja_potwierdzenie_email.php");
+          header("location: ../logowanie/logowanie.php");
           }else{
             echo "<h7>Nie spełniono warunków dotyczących hasła.</h7>";
           }
@@ -24,7 +24,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["passw
           echo "<h7>Hasła się od siebie różnią</h7>";
         }
       }else{
-        echo "<h7>Konto z podanym adresem email już istnieje. Możesz spróbować odzyskać hasło</h7>";
+        echo "<h7>Konto z podanym adresem email nie istnieje. Sprawdź poprawność wprowadzonych danych</h7>";
       }
     }
 

@@ -6,7 +6,6 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
   $query = "SELECT Haslo, ID_status_uzytkownik FROM uzytkownik WHERE Login = '$email';";
   $result = mysqli_query($connect,$query);
   $row = mysqli_fetch_assoc($result);
-  if($row["ID_status_uzytkownik"] != 3){
     if(password_verify($password,$row["Haslo"]) == true){ //sprawdzanie czy hash hasła z bazy danych  zgadza się z hashem hasła podanego przez użytkownika
       $_SESSION["email"] = $email;
       $_SESSION["logged"] = true;
@@ -16,10 +15,6 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
       header("location: ../index/indexlog.php");
       }else{
       echo "<h7>Podano nieprawidłowe hasło lub login</h7>";
-      }
-    }else{
-      echo "<h7 style='text-align: justify;'>Na podany przez Ciebie adres email została wysłąna wiadomość pozwalająca
-      potwierdzić założenie konta. Logowanie będzie dopiero możliwe po potwierdzeniu rejstracji.</h7>";
     }
   }
 

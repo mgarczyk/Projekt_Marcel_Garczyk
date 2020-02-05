@@ -12,7 +12,7 @@
     </head>
     <body>
       <?php
-      if(isset($_SESSION["email"])){
+      if(isset($_SESSION["email"]) && isset($_SESSION["logged"])){
         require_once("../stale_elementy/navbarlog.php");
         }else{
         require_once("../stale_elementy/navbar.php");
@@ -30,15 +30,15 @@
                         <h4>Polski</h4>
                       </div><br>
                       <input class="form-control" type="text" name="sprawdz" placeholder="Wpisz tłumaczenie"><br>
-                      <input type="submit" class="btn-primary btn-max" value="Potwierdź"/></a><br><br>
-                      <input type="submit" class="btn-primary btn-max" value="Zapisz wynik i zakończ"/></a><br><br>
+                      <input type="submit" class="btn-primary btn-max" value="Potwierdź"/><br><br>
+                      <input type="submit" class="btn-primary btn-max" value="Zapisz wynik i zakończ"/><br><br>
                   </form>
                   <a href="wybor_kurs.php"><input type="button" class="btn-primary btn-max" value="Wybierz inny kurs" /></a><br><br>
                 </div>
               </div>
           </div>
           <?php
-          if(isset($_SESSION["email"])){
+          if(isset($_SESSION["email"]) && isset($_SESSION["logged"])){
             require_once("../stale_elementy/footerlog.php");
             }else{
             require_once("../stale_elementy/footer.php");
