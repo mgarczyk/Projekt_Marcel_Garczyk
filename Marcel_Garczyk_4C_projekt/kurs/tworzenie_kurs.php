@@ -31,14 +31,6 @@
                       <option value="UTK">Urządzenia Techniki Komputerowej</option>
                       <option value="SK">Sieci Komputerowe</option>
                     </select><br>
-                    <select class="form-control" name="select_kurs_jezyk_z">
-                      <option value="Polski">Polski</option>
-                      <option value="Angielski">Angielski</option>
-                    </select><br>
-                    <select class="form-control" name="select_kurs_jezyk_na">
-                        <option value="Polski">Polski</option>
-                        <option value="Angielski">Angielski</option>
-                    </select><br>
                     <input type="submit" class="btn-primary btn-max" value="Stwórz nowy kurs"/><br><br>
                   </form>
                   <a href="wybor_kurs.php"><input type="button" class="btn-primary btn-max" value="Przejdź do wyboru"></a><br><br>

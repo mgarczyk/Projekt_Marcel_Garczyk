@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Lut 2020, 12:57
+-- Czas generowania: 18 Mar 2020, 00:54
 -- Wersja serwera: 10.4.10-MariaDB
 -- Wersja PHP: 7.3.12
 
@@ -30,9 +30,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `dzial` (
   `ID_Dzial` int(11) NOT NULL,
-  `Nazwa_Dzial` varchar(30) NOT NULL,
-  `Ilosc_Slow` int(5) DEFAULT NULL
+  `Nazwa_Dzial` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `dzial`
+--
+
+INSERT INTO `dzial` (`ID_Dzial`, `Nazwa_Dzial`) VALUES
+(1, 'SO'),
+(2, 'UTK'),
+(3, 'SK');
 
 -- --------------------------------------------------------
 
@@ -43,8 +51,6 @@ CREATE TABLE `dzial` (
 CREATE TABLE `kurs` (
   `ID_Kurs` int(20) UNSIGNED NOT NULL,
   `ID_Uzytkownik` int(11) NOT NULL,
-  `Jezyk_z` varchar(30) NOT NULL,
-  `Jezyk_na` varchar(30) NOT NULL,
   `ID_Dzial` int(11) NOT NULL,
   `ID_Status` int(11) NOT NULL,
   `Ilosc_nauczonych` int(11) NOT NULL
@@ -62,6 +68,18 @@ CREATE TABLE `slowo` (
   `Angielski` varchar(50) NOT NULL,
   `ID_Dzial` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `slowo`
+--
+
+INSERT INTO `slowo` (`ID_Slowo`, `Polski`, `Angielski`, `ID_Dzial`) VALUES
+(5, 'system operacyjny', 'operating system', 1),
+(6, 'karta graficzna', 'video card', 2),
+(9, 'jądro systemu operacyjnego', 'kernel (OS)', 1),
+(10, 'klawiatura', 'keyboard', 2),
+(13, 'światłowód', 'optical fiber', 3),
+(14, 'skrętka', 'twisted pair', 3);
 
 -- --------------------------------------------------------
 
@@ -133,7 +151,7 @@ CREATE TABLE `uzytkownik` (
 --
 
 INSERT INTO `uzytkownik` (`ID_Uzytkownik`, `Login`, `Haslo`, `ID_status_uzytkownik`, `Data_Ostatniego_Logowania`, `ID_uprawnienia`) VALUES
-(85, 'marcelgarczyk.projekt@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$Nkl2M3RXZklTRjl6emoyeg$R3jZv7FTjvjTsCRsEPESjNJP7hNera1chOpE1NQRmFQ', 2, '2020-02-07', 1);
+(88, 'marcelgarczyk.projekt@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$VDhQd2Jzd3Q0QldHdURLdA$+hMuIcW1kT8IFTEx76rSJrSmCfVJJTuNGpR2QPGxQZo', 1, '2020-03-17', 1);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -195,7 +213,7 @@ ALTER TABLE `uzytkownik`
 -- AUTO_INCREMENT dla tabeli `dzial`
 --
 ALTER TABLE `dzial`
-  MODIFY `ID_Dzial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_Dzial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `kurs`
@@ -207,7 +225,7 @@ ALTER TABLE `kurs`
 -- AUTO_INCREMENT dla tabeli `slowo`
 --
 ALTER TABLE `slowo`
-  MODIFY `ID_Slowo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_Slowo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT dla tabeli `status_kursu`
@@ -219,7 +237,7 @@ ALTER TABLE `status_kursu`
 -- AUTO_INCREMENT dla tabeli `uzytkownik`
 --
 ALTER TABLE `uzytkownik`
-  MODIFY `ID_Uzytkownik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `ID_Uzytkownik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- Ograniczenia dla zrzutów tabel

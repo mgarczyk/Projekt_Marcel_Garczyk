@@ -249,43 +249,45 @@
         </div>
     </footer>
   <?php  }else{ ?>
-    <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="../index/index.php">Strona domowa</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navbarNavDropdown" class="navbar-collapse collapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link navbar-line" href="../inne_podstrony/o_projekcie.php">O stronie</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-line" href="../fiszki/fiszki_dzial.php">Fiszki</a>
-                    </li>
-                    <li class="nav-item">
-                            <a class="nav-link navbar-line" href="../logowanie/logowanie.php">Stwórz kurs</a>
-                    </li>
-                    <li class="nav-item">
-                            <a class="nav-link navbar-line" href="../logowanie/logowanie.php">Kontunuuj kurs</a>
-                    </li>
-                    <li class="nav-item">
-                            <a class="nav-link navbar-line" href="../inne_podstrony/kontakt.php">Kontakt</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link navbar-line" href="../logowanie/logowanie.php">
-                            <span class="fas fa-sign-in-alt"></span><span class="white-space"> Logowanie</span>
-                         </a>
-                    </li>
-                    <li class="nav-item">
-                            <a class="nav-link navbar-line" href="../logowanie/rejstracja.php">
-                                <span class="fas fa-user-plus white-space"></span><span class="white-space"> Rejstracja</span>
-                            </a>
-                    </li>
-                </ul>
+    <footer id="sticky-footer" class="py-3 footer footer-margin">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-left">
+                        <div class="footer-widget">
+                        <div class="footer-title">Zacznij naukę</div>
+                        <ul class="list-unstyled">
+                            <li><a href="../fiszki/fiszki_dzial.php">Ucz się z fiszek</li></a>
+                            <li><a href="../logowanie/logowanie.php">Kontyunuuj kurs</li></a>
+                            <li><a href="../logowanie/logowanie.php">Stwórz kurs</li></a>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-left">
+                        <div class="footer-widget">
+                            <div class="footer-title">Dowiedz się więcej</div>
+                            <ul class="list-unstyled">
+                                <li><a href="../inne_podstrony/o_projekcie.php">O stronie</li></a>
+                                <li><a href="../inne_podstrony/kontakt.php">Kontakt</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-left">
+                        <div class="footer-widget">
+                            <div class="footer-title">Zarejstruj się</div>
+                            <ul class="list-unstyled">
+                                <li><a href="../logowanie/rejstracja.php">Rejstracja</li></a>
+                                <li><a href="../logowanie/logowanie.php">Logowanie</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12 margin small-footer text-center">Copyright @Marcel Garczyk 2019</div>
             </div>
-    </nav>
+        </div>
+
+    </footer>
   <?php } ?>
 
   </body>
