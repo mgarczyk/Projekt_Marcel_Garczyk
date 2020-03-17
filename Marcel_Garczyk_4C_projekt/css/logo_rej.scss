@@ -1,0 +1,62 @@
+$main-color: #108E84;
+$button-onclik-color: #0487D9;
+body{
+
+    font-family: 'Helvetica';
+    background-color: #D0D8D9;
+}
+h4{
+  font-weight: bold;
+  color: white;
+}
+a{
+  text-decoration: none;
+}
+.margin{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vh;
+}
+.btn-primary{
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  background-color: $main-color;
+  font-weight: bold;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    background-color: $button-onclik-color;
+}
+.btn-outline-primary{
+  width: 100%;
+  border-radius: 1.5rem;
+  padding: 1.5%;
+  border: $main-color 2px solid;
+  cursor: pointer;
+  color: $main-color;
+  font-weight: bold;
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active, .open>.dropdown-toggle.btn-outline-primary {
+    background-color: $button-onclik-color;
+}
+
+.form-control{
+    border: $main-color 1.5px solid;
+}
+.form-control:focus, .form-control:active, .form-control.active, .open>.dropdown-toggle.form-control {
+  border-color: $main-color;
+  box-shadow: inset 0 1px 1px $main-color, 0 0 8px $main-color;
+}
+.ForgetPwd{
+  color: $main-color;
+}
+.h_class{
+  padding-top: 15px;
+  background-color: $main-color;
+  width: 100%;
+  border-radius: 1.5rem;
+  text-align: center;
+  height: 60px;
+}
+
