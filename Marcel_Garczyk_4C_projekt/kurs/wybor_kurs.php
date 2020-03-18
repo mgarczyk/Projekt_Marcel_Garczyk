@@ -25,12 +25,9 @@
                       <h4>Wybierz kurs</h4><br>
                   </div>
                   <br>
-                  <form class="text-center" name="form_wybor_kurs" method="post" action="">
-                    <select class="form-control" name="select_kurs"  >
-                      <option value="1">Kurs 1: Sytemy Operacyjne, z Polski na Angielski</option>
-                      <option value="2">Kurs 2: Urządzenia Techniki Komputerowej, z Angielski na Polski</option> <!-- Przykładowe dane z bazy -->
-                    </select><br>
-                    <a href="nauka_kurs.php"><input type="button" class="btn-primary btn-max" value="Rozpocznij naukę" /></a><br><br>
+                  <form class="text-center" name="form_wybor_kurs" method="post" action="nauka_kurs.php">
+                    <?php require_once("../pliki/kursy/wybor_kurs_kod.php") ?>
+                  <input type="submit" name="przycisk_wybor_kurs" class="btn-primary btn-max" value="Rozpocznij naukę" /><br><br>
                   </form>
                   <a href="tworzenie_kurs.php"><input type="button" class="btn-primary btn-max" value="Stwórz inny kurs" /></a><br><br>
                   <a href="../index/index.php"><input type="button" class="btn-outline-primary btn-max" value="Strona główna" /></a><br><br>
@@ -43,6 +40,7 @@
             }else{
             require_once("../stale_elementy/footer.php");
           }
+        
           ?>
     </body>
 </html>

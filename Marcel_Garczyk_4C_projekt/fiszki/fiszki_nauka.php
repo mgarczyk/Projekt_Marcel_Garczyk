@@ -74,10 +74,10 @@
             $("#next").click(function(){
                 ile = ile + 1;
                 //alert(ile); alert który rekord
-                  $("#polski").load("kod_polski.php",{ //rekord późniejszy
+                  $("#polski").load("../pliki/fiszki/kod_polski.php",{ //rekord późniejszy
                     ilenew: ile,
                   });
-                  $("#angielski").load("kod_angielski.php",{ //rekord późniejszy
+                  $("#angielski").load("../pliki/fiszki/kod_angielski.php",{ //rekord późniejszy
                     ilenew: ile,
                   });
                 });
@@ -85,10 +85,10 @@
                     ile = ile - 1;
                     if(ile < 0) ile = 1;
                     //alert(ile); alert który rekord
-                      $("#polski").load("kod_polski.php",{
+                      $("#polski").load("../pliki/fiszki/kod_polski.php",{
                         ilenew: ile,
                       });
-                      $("#angielski").load("kod_angielski.php",{ //rekord późniejszy
+                      $("#angielski").load("../pliki/fiszki/kod_angielski.php",{ //rekord późniejszy
                         ilenew: ile,
                       });
                     });

@@ -17,6 +17,7 @@
         }else{
         require_once("../stale_elementy/navbar.php");
         }
+        require_once("../pliki/kursy/tworzenie_kurs_kod.php");
       ?>
       <div class="container">
             <div class="row">
@@ -31,7 +32,9 @@
                       <option value="UTK">Urządzenia Techniki Komputerowej</option>
                       <option value="SK">Sieci Komputerowe</option>
                     </select><br>
-                    <input type="submit" class="btn-primary btn-max" value="Stwórz nowy kurs"/><br><br>
+                    <input type="submit" name="kurs_dzial" class="btn-primary btn-max" value="Stwórz nowy kurs"/><br><br>
+                    <?php if(isset($_SESSION["message_kurs"])) echo $_SESSION["message_kurs"]."<br>";
+                          unset($_SESSION["message_kurs"]);?>
                   </form>
                   <a href="wybor_kurs.php"><input type="button" class="btn-primary btn-max" value="Przejdź do wyboru"></a><br><br>
                   <a href="../index/index.php"><input type="button" class="btn-outline-primary btn-max" value="Strona główna" /></a><br><br>
