@@ -17,6 +17,10 @@
         }else{
         require_once("../stale_elementy/navbar.php");
         }
+        if(isset($_POST["przycisk_wybor_kurs"])){
+          $_SESSION["wybierz_kurs"] = $_POST["wybierz_kurs"];
+          header("location: nauka_kurs.php");
+        }
       ?>
       <div class="container">
             <div class="row">
@@ -25,7 +29,7 @@
                       <h4>Wybierz kurs</h4><br>
                   </div>
                   <br>
-                  <form class="text-center" name="form_wybor_kurs" method="post" action="nauka_kurs.php">
+                  <form class="text-center" name="form_wybor_kurs" method="post">
                     <?php require_once("../pliki/kursy/wybor_kurs_kod.php") ?>
                   <input type="submit" name="przycisk_wybor_kurs" class="btn-primary btn-max" value="Rozpocznij naukę" /><br><br>
                   </form>
@@ -40,7 +44,7 @@
             }else{
             require_once("../stale_elementy/footer.php");
           }
-        
+
           ?>
     </body>
 </html>

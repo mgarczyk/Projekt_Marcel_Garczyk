@@ -25,5 +25,5 @@ if($ile <= $ilosc_slow){
 }else{
   echo "That's all, choose another section";
 }
-mysqli_close();
+mysqli_close($connect);
 ?>
