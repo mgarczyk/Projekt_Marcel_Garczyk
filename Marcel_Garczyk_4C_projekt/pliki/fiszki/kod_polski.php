@@ -19,7 +19,9 @@ if ($ile<=0) $ile=1;
 if($ile <= $ilosc_slow){
   if($result_slowo_sql->num_rows>0){
     while($row = $result_slowo_sql->fetch_assoc()){
-      if($row["Ile"] == $ile) echo $row["Polski"];
+      if($row["Ile"] == $ile) {
+        echo $row["Polski"]."<input type='hidden' id='ilosc_slow' value='$ilosc_slow'/>";
+      }
     }
   }
 }else{

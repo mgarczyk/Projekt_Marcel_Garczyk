@@ -36,13 +36,14 @@ WHERE dzial.Nazwa_dzial Like '$dzial';";
 $result_ilosc_slow = mysqli_query($connect, $query_ilosc_slow);
 $row_ilosc_slow = mysqli_fetch_assoc($result_ilosc_slow);
 $ilosc_slow = $row_ilosc_slow["Ilosc_slow"];
+echo "<input type='hidden' id='ilosc_slow' value='$ilosc_slow'/>";
 if ($ile<=0) $ile=1;
 if($result_slowo_sql->num_rows>0){
     while($row = $result_slowo_sql->fetch_assoc()){
       if($row["Ile"] == $ile){
         $angielski = $row["Angielski"];
             echo "<input type='hidden' id='angielski_baza' value='$angielski'/>";
-            echo "<input type='hidden' id='ilosc_slow' value='$ilosc_slow'/>";
+
         }
       }
     }

@@ -73,6 +73,7 @@
     var ile = 0;
             $("#next").click(function(){
                 ile = ile + 1;
+                if(ile > 1) document.getElementById('before').hidden = false;
                 //alert(ile); alert który rekord
                   $("#polski").load("../pliki/fiszki/kod_polski.php",{ //rekord późniejszy
                     ilenew: ile,
@@ -80,10 +81,12 @@
                   $("#angielski").load("../pliki/fiszki/kod_angielski.php",{ //rekord późniejszy
                     ilenew: ile,
                   });
+                  var ilosc_slow_baza = document.getElementById('ilosc_slow').value;
+                  if(ile >= ilosc_slow_baza) document.getElementById('next').hidden = true;
                 });
                 $("#before").click(function(){
                     ile = ile - 1;
-                    if(ile < 0) ile = 1;
+                    if(ile <=1 ) document.getElementById('before').hidden = true;
                     //alert(ile); alert który rekord
                       $("#polski").load("../pliki/fiszki/kod_polski.php",{
                         ilenew: ile,
@@ -91,14 +94,13 @@
                       $("#angielski").load("../pliki/fiszki/kod_angielski.php",{ //rekord późniejszy
                         ilenew: ile,
                       });
+                      var ilosc_slow_baza = document.getElementById('ilosc_slow').value;
+                      if(ile <= ilosc_slow_baza) document.getElementById('next').hidden = false;
                     });
             });
   </script>
   <?php
-    $_SESSION["dzial"] = "";
-    if (!isset($_SESSION['inicjuj'])){
-      if(!empty($_POST["select_dzial"])) $_SESSION["dzial"] = $_POST["select_dzial"];
-    }
+    if(!empty($_POST["select_dzial"])) $_SESSION["dzial"] = $_POST["select_dzial"];
   ?>
   <body>
     <?php if(isset($_SESSION["email"]) && isset($_SESSION["logged"])){
@@ -198,9 +200,8 @@
                   </div>
                 </div>
           </div>
-          <br>
-          <button class="btn btn-primary btn-max" id="next">Kolejne słówko</button><br><br>
-          <button class="btn btn-primary btn-max" id="before">Poprzednie słówko</button><br><br>
+          <input type ="button" class="btn btn-primary btn-max" id="next" value="Kolejne słówko" style="margin-bottom: 20px;">
+          <input type="button" class="btn btn-primary btn-max" id="before" value="Poprzednie słówko" hidden style="margin-bottom: 20px;">
           <a href="fiszki_dzial.php"><button type="button" class="btn-outline-primary btn-max">Wybierz inny dział</button></a>
         </div>
       </div>
