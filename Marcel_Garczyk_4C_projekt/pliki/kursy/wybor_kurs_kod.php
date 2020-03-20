@@ -1,12 +1,15 @@
 <?php
 $connect = new mysqli('localhost', 'root', '' , 'marcel_garczyk_baza');
+$email = $_SESSION["email"];
 if (!$connect) {
     die(mysqli_connect_error());
 }
+
 $query_kursy = "SELECT Nazwa_dzial, Ilosc_slow
 FROM kurs
 INNER JOIN dzial
-ON kurs.ID_dzial = dzial.ID_dzial;";
+ON kurs.ID_dzial = dzial.ID_dzial
+WHERE ID_uzytkownik = (SELECT ID_uzytkownik FROM uzytkownik WHERE Login LIKE '$email');";
 $result_kursy = mysqli_query($connect, $query_kursy);
 echo <<< 'STYL'
 

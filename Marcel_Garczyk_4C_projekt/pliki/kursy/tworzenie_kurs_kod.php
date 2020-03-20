@@ -8,9 +8,8 @@
     $kurs_dzial = $_POST["select_kurs_dzial"];
     $query_kurs_ilosc = "SELECT COUNT(kurs.ID_dzial) AS Ilosc_kurs
     FROM kurs
-    INNER JOIN dzial
-    ON kurs.ID_dzial = dzial.ID_dzial
-    WHERE dzial.Nazwa_dzial = '$kurs_dzial'";
+    WHERE ID_dzial = (SELECT ID_dzial FROM dzial WHERE Nazwa_dzial LIKE '$kurs_dzial')
+    AND ID_uzytkownik = (SELECT ID_uzytkownik FROM uzytkownik WHERE Login LIKE '$email');";
     $result_ilosc_kurs = mysqli_query($connect, $query_kurs_ilosc);
     $row_ilosc_kurs = mysqli_fetch_assoc($result_ilosc_kurs);
     $ilosc_kurs = $row_ilosc_kurs["Ilosc_kurs"];
