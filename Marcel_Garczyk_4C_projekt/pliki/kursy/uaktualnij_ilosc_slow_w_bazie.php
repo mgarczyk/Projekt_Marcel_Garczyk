@@ -1,7 +1,6 @@
 <?php
 session_start();
 $ile = $_POST["ilenew"];
-$ile = $ile - 1;
 $ilosc = $_POST["ilosc_slow_bazanew"];
 $dzial = $_POST["kursnew"];
 $email = $_SESSION["email"];

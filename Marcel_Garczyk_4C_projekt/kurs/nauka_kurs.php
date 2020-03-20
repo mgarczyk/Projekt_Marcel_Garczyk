@@ -95,6 +95,9 @@
         </nav>
       <?php } ?>
       <?php
+      if($_SESSION["wybierz_kurs"] == ""){
+        header("location: wybor_kurs.php");  //jezeli ta zmienna sesyjna jest pusta uzytkownik musi wybrać kurs
+      }
       $connect = new mysqli('localhost', 'root', '', 'marcel_garczyk_baza');
       if (!$connect) {
           die(mysqli_connect_error());
@@ -141,7 +144,7 @@
       //Skrypt odpowiada za pokazywanie słówek polskich i sprawdzanie czy podane przez użytkownika odpowiadające słówko po angielsku jest prawidłowe.
       $(document).ready(function(){
         var ile = Number(document.getElementById('hidden_ilosc_kurs').value); //popranie ilości słowek z uktyrgo inputa
-        ; //jeśli pobrany licznik jest większy od 1 to musimy go zmniejszyć o jeden by wskazywał odpowiednie słowo
+        if(ile >= 1) ile = ile - 1; //jeśli pobrany licznik jest większy od 1 to musimy go zmniejszyć o jeden by wskazywał odpowiednie słowo
         var ilosc_slow_baza = Number(document.getElementById('hidden_ilosc_dzial').value); //popranie ilości słowek z uktyrgo inputa
         var kurs = document.getElementById('hidden_kurs').value; //pobranie dzialu
                 $("#next").click(function(){ //jeśli klikniemy next to

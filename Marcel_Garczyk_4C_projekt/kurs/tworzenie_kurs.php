@@ -18,6 +18,7 @@
         require_once("../stale_elementy/navbar.php");
         }
         require_once("../pliki/kursy/tworzenie_kurs_kod.php");
+
       ?>
       <div class="container">
             <div class="row">

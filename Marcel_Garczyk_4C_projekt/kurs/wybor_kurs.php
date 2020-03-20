@@ -31,9 +31,9 @@
                   <br>
                   <form class="text-center" name="form_wybor_kurs" method="post">
                     <?php require_once("../pliki/kursy/wybor_kurs_kod.php") ?>
-                  <input type="submit" name="przycisk_wybor_kurs" class="btn-primary btn-max" value="Rozpocznij naukę" /><br><br>
+                  <input type="submit" name="przycisk_wybor_kurs" class="btn-primary btn-max" value="Rozpocznij naukę" />
                   </form>
-                  <a href="tworzenie_kurs.php"><input type="button" class="btn-primary btn-max" value="Stwórz inny kurs" /></a><br><br>
+                  <a href="tworzenie_kurs.php"><input type="button" class="btn-primary btn-max" value="Stwórz inny kurs" style="margin-top: 20px;"/></a><br><br>
                   <a href="../index/index.php"><input type="button" class="btn-outline-primary btn-max" value="Strona główna" /></a><br><br>
                 </div>
               </div>
@@ -44,7 +44,13 @@
             }else{
             require_once("../stale_elementy/footer.php");
           }
-
           ?>
+          <script type="text/javascript">
+              if(document.getElementById('czybrak').value == 0){
+                document.form_wybor_kurs.przycisk_wybor_kurs.hidden = true;
+              }else{
+                  document.form_wybor_kurs.przycisk_wybor_kurs.hidden = false;
+              }
+          </script>
     </body>
 </html>
