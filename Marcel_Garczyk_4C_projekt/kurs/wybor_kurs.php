@@ -17,10 +17,6 @@
         }else{
         require_once("../stale_elementy/navbar.php");
         }
-        if(isset($_POST["przycisk_wybor_kurs"])){
-          $_SESSION["wybierz_kurs"] = $_POST["wybierz_kurs"];
-          header("location: nauka_kurs.php");
-        }
       ?>
       <div class="container">
             <div class="row">
@@ -29,11 +25,14 @@
                       <h4>Wybierz kurs</h4><br>
                   </div>
                   <br>
-                  <form class="text-center" name="form_wybor_kurs" method="post">
-                    <?php require_once("../pliki/kursy/wybor_kurs_kod.php") ?>
-                  <input type="submit" name="przycisk_wybor_kurs" class="btn-primary btn-max" value="Rozpocznij naukę" />
+                  <form class="text-center" name="form_wybor_kurs" method="post" action="">
+                    <select class="form-control" name="select_kurs"  >
+                      <option value="1">Kurs 1: Sytemy Operacyjne, z Polski na Angielski</option>
+                      <option value="2">Kurs 2: Urządzenia Techniki Komputerowej, z Angielski na Polski</option> <!-- Przykładowe dane z bazy -->
+                    </select><br>
+                    <a href="nauka_kurs.php"><input type="button" class="btn-primary btn-max" value="Rozpocznij naukę" /></a><br><br>
                   </form>
-                  <a href="tworzenie_kurs.php"><input type="button" class="btn-primary btn-max" value="Stwórz inny kurs" style="margin-top: 20px;"/></a><br><br>
+                  <a href="tworzenie_kurs.php"><input type="button" class="btn-primary btn-max" value="Stwórz inny kurs" /></a><br><br>
                   <a href="../index/index.php"><input type="button" class="btn-outline-primary btn-max" value="Strona główna" /></a><br><br>
                 </div>
               </div>
@@ -45,12 +44,5 @@
             require_once("../stale_elementy/footer.php");
           }
           ?>
-          <script type="text/javascript">
-              if(document.getElementById('czybrak').value == 0){
-                document.form_wybor_kurs.przycisk_wybor_kurs.hidden = true;
-              }else{
-                  document.form_wybor_kurs.przycisk_wybor_kurs.hidden = false;
-              }
-          </script>
     </body>
 </html>

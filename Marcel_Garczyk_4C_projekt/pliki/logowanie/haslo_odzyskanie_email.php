@@ -14,7 +14,7 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Port = '465';
 $mail->isHTML();
 $mail->Username = 'marcelgarczyk.projekt@gmail.com';
-$mail->Password = 'K@merowanie97';
+$mail->Password = 'Zaq1@wsx';
 $mail->SetFrom('no-reply@projekt.pl');
 $mail->Subject = 'Odzyskaj haslo';
 $mail->Body='Uruchom to hiperlacze, aby odzyskac haslo:

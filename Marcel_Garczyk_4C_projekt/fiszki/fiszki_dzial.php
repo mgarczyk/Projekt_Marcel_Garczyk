@@ -24,13 +24,13 @@
                       <h4>Wybierz dział do nauki</h4><br>
                   </div>
                   <br>
-                  <form class="text-center" name="form_dzial" method="post" action="fiszki_nauka.php">
+                  <form class="text-center" name="form_dzial" method="post" action="">
                     <select class="form-control" name="select_dzial"  >
                       <option value="SO">Systemy Operacyjne</option>
                       <option value="UTK">Urządzenia Techniki Komputerowej</option>
                       <option value="SK">Sieci Komputerowe</option>
                     </select><br>
-                    <input type="submit" class="btn-primary btn-max float-right" name="submit_dzial" value="Rozpocznij naukę" /><br><br><br>
+                    <a href="fiszki_nauka.php"><input type="button" class="btn-primary btn-max float-right" value="Rozpocznij naukę" /></a><br><br><br>
                   </form>
                   <a href="../index/index.php"><input type="button" class="btn-outline-primary btn-max float-right" value="Strona główna" /></a><br><br>
                 </div>
