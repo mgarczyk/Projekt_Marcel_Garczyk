@@ -24,13 +24,18 @@
                       <h4>Wybierz dział do nauki</h4><br>
                   </div>
                   <br>
-                  <form class="text-center" name="form_dzial" method="post" action="">
+                  <form class="text-center" name="form_dzial" method="post" action="fiszki_nauka.php">
                     <select class="form-control" name="select_dzial"  >
-                      <option value="SO">Systemy Operacyjne</option>
-                      <option value="UTK">Urządzenia Techniki Komputerowej</option>
-                      <option value="SK">Sieci Komputerowe</option>
+                      <?php
+                      require_once("../pliki/logowanie/connect.php");
+                      $query_dzialy = "SELECT Nazwa_Dzial FROM dzial;";
+                      $result_dzialy = mysqli_query($connect, $query_dzialy);
+                      while($row_dzialy = mysqli_fetch_assoc($result_dzialy)){
+                          echo "<option value='$row_dzialy[Nazwa_Dzial]'>Wybierz dział ".$row_dzialy["Nazwa_Dzial"]."</option>";
+                      }
+                       ?>
                     </select><br>
-                    <a href="fiszki_nauka.php"><input type="button" class="btn-primary btn-max float-right" value="Rozpocznij naukę" /></a><br><br><br>
+                    <input type="submit" class="btn-primary btn-max float-right" name="submit_dzial" value="Rozpocznij naukę" /><br><br><br>
                   </form>
                   <a href="../index/index.php"><input type="button" class="btn-outline-primary btn-max float-right" value="Strona główna" /></a><br><br>
                 </div>

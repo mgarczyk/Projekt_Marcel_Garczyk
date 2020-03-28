@@ -26,6 +26,11 @@
                         <ul class="list-unstyled">
                             <li><a href="../inne_podstrony/o_projekcie.php">O stronie</li></a>
                             <li><a href="../inne_podstrony/kontakt.php">Kontakt</li></a>
+                            <?php
+                              if($_SESSION["uprawnienia"] == 2){
+                                echo '<li><a href="../panel_admin/admin.php">Admin</li></a>';
+                              }
+                             ?>
                         </ul>
                     </div>
                 </div>
@@ -41,7 +46,7 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col-md-12 margin small-footer text-center">Copyright @Marcel Garczyk 2019</div>
+                  <div class="col-md-12 margin small-footer text-center">&copy; Copyright 2020, Marcel Garczyk. All Rights Reserved</div>
         </div>
     </div>
 

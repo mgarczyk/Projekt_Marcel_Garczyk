@@ -28,6 +28,15 @@
                 <li class="nav-item">
                         <a class="nav-link navbar-line" href="../inne_podstrony/kontakt.php">Kontakt</a>
                 </li>
+                <?php
+                  if($_SESSION["uprawnienia"]==2){
+                    echo <<< ADMIN
+                    <li class="nav-item">
+                            <a class="nav-link navbar-line" href="../panel_admin/admin.php">Panel adminstratora</a>
+                    </li>
+                    ADMIN;
+                  };
+                ?>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">

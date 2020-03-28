@@ -5,6 +5,7 @@
         <title>Rejstracja</title>
         <link rel="stylesheet" href="../pliki/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/main.css">
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <meta name="description" content="Nauka angielskiego technicznego dla informatyków.">
         <meta name="keywords" content="angielski techniczny, informatyka, fiszki, kursy, słówka">
         <meta name="author" content="Marcel Garczyk">
