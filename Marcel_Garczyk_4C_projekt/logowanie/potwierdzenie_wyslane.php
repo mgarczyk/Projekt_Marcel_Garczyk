@@ -21,7 +21,7 @@
                  Na podany adres email została wysłana wiadomość umożliwiająca potwierdzenie rejstracji.
                  Po potwierdzeniu będzie możliwe zalogwanie
               </div><br>
-              <a href="../index/index.php"><input type="button" class="btn-primary btn-max" value="Wróć na stronę główną" /></a><br><br>
+              <a href="../index/index.php"><input type="button" class="btn-outline-primary btn-max" value="Strona główna"/></a><br><br>
           </div>
       </div>
     </div>

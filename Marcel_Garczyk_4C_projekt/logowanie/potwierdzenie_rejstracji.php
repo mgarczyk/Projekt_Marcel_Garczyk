@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start();
+$_SESSION["potwierdzenie"] = 1;
+?>
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">

@@ -20,7 +20,11 @@
               <div class="col-lg-12 display_div" style="text-align: justify;">
                  Na podany adres email została wysłana wiadomość dotycząca zmiany hasła.
               </div><br>
-              <a href="../index/index.php"><input type="button" class="btn-primary btn-max" value="Wróć na stronę główną" /></a><br><br>
+              <?php if($_SESSION["potwierdzenie"] != 1) echo '<a href="logowanie.php"><input type="button" class="btn-outline-primary btn-max" value="Powrót do logowania"/></a><br><br>';
+                else{
+                  echo '<a href="potwierdzenie_rejstracji.php"><input type="button" class="btn-outline-primary btn-max" value="Powrót do potwierzenia rejstracji"/></a><br><br>';
+                }
+                ?>
           </div>
       </div>
     </div>

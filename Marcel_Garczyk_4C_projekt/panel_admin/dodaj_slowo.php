@@ -54,7 +54,7 @@
                           FROM dzial
                           WHERE Nazwa_Dzial LIKE '$dzial';";  //wpisz użytkownika do bazy
                           $result_dodaj_slowo = mysqli_query($connect,$query_dodaj_slowo);
-                          echo "Słowo zostało dodane pomyślnie. Dodaj koljne lub wróć do panelu admina<br><br>";
+                          echo "Słowo zostało dodane pomyślnie. Dodaj kolejne lub wróć do panelu admina<br><br>";
                         }
                       }
                      ?>

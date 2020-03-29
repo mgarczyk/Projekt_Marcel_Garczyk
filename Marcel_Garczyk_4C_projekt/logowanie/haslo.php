@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start();
+
+?>
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -25,9 +27,9 @@
                     </div><br>
                     <input type="email" class="form-control" placeholder="Podaj e-mail" value="" name="email" /><br>
                     <input type="submit" class="btn-primary btn-max" value="Wyślij"/><br><br>
-                    <a href="logowanie.php"><input type="button" class="btn-primary btn-max" value="Powrót do logowania" /></a><br><br>
-                    <a href="../index/index.php"><input type="button" class="btn-outline-primary btn-max" value="Strona główna"/></a><br><br>
-                    <?php require_once("../pliki/logowanie/haslo_odzyskanie_email.php") ?>
+                    <?php if(isset($_SESSION["potwierdzenie"]) && $_SESSION["potwierdzenie"] != 1) echo '<a href="logowanie.php"><input type="button" class="btn-primary btn-max" value="Powrót do logowania" /></a><br><br>';?>
+                    <?php if(isset($_SESSION["potwierdzenie"]) && $_SESSION["potwierdzenie"] != 1)echo '<a href="../index/index.php"><input type="button" class="btn-outline-primary btn-max" value="Strona główna"/></a><br><br>';?>
+                    <?php require_once("../pliki/logowanie/haslo_odzyskanie_email.php"); ?>
                   </form>
                 </div>
               </div>

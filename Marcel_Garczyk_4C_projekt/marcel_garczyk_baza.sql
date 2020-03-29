@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Mar 2020, 21:34
+-- Czas generowania: 29 Mar 2020, 21:47
 -- Wersja serwera: 10.4.10-MariaDB
 -- Wersja PHP: 7.3.12
 
@@ -40,7 +40,8 @@ CREATE TABLE `dzial` (
 INSERT INTO `dzial` (`ID_Dzial`, `Nazwa_Dzial`) VALUES
 (1, 'SO'),
 (2, 'UTK'),
-(3, 'SK');
+(3, 'SK'),
+(7, 'REW');
 
 -- --------------------------------------------------------
 
@@ -63,9 +64,9 @@ CREATE TABLE `kurs` (
 INSERT INTO `kurs` (`ID_kurs`, `ID_uzytkownik`, `ID_dzial`, `ID_status`, `Ilosc_slow`) VALUES
 (59, 89, 2, 3, 0),
 (60, 89, 3, 3, 0),
-(105, 88, 1, 3, 5),
-(106, 88, 2, 3, 0),
-(107, 88, 3, 1, 0);
+(119, 88, 1, 3, 0),
+(120, 88, 3, 1, 0),
+(121, 88, 2, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -341,8 +342,9 @@ CREATE TABLE `uzytkownik` (
 --
 
 INSERT INTO `uzytkownik` (`ID_Uzytkownik`, `Login`, `Haslo`, `ID_status_uzytkownik`, `Data_Ostatniego_Logowania`, `ID_uprawnienia`) VALUES
-(88, 'marcelgarczyk.projekt@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$VDhQd2Jzd3Q0QldHdURLdA$+hMuIcW1kT8IFTEx76rSJrSmCfVJJTuNGpR2QPGxQZo', 1, '2020-03-17', 2),
-(89, 'xxmadzelxx@wp.pl', '$argon2id$v=19$m=65536,t=4,p=1$WlVNT0J1RVhsSTQ5aFZ5Mw$mrRzw4VdURKVZbNjxiun/BHo3EeTDFWBnCN3d5I12OI', 2, '2020-03-20', 1);
+(88, 'marcelgarczyk.projekt@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$VDhQd2Jzd3Q0QldHdURLdA$+hMuIcW1kT8IFTEx76rSJrSmCfVJJTuNGpR2QPGxQZo', 2, '2020-03-17', 2),
+(89, 'xxmadzelxx@wp.pl', '$argon2id$v=19$m=65536,t=4,p=1$WlVNT0J1RVhsSTQ5aFZ5Mw$mrRzw4VdURKVZbNjxiun/BHo3EeTDFWBnCN3d5I12OI', 2, '2020-03-20', 1),
+(91, 'admin_1@wp.pl', '$argon2id$v=19$m=65536,t=4,p=1$S3RndlpId2pia3FrakZVZw$oAYsHaf+eZFi5fWdfOW0zcyNvJIfEKxTRAN95XHVwOI', 2, '2020-03-28', 2);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -401,19 +403,19 @@ ALTER TABLE `uzytkownik`
 -- AUTO_INCREMENT dla tabeli `dzial`
 --
 ALTER TABLE `dzial`
-  MODIFY `ID_Dzial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_Dzial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT dla tabeli `kurs`
 --
 ALTER TABLE `kurs`
-  MODIFY `ID_kurs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `ID_kurs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
 
 --
 -- AUTO_INCREMENT dla tabeli `slowo`
 --
 ALTER TABLE `slowo`
-  MODIFY `ID_Slowo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=288;
+  MODIFY `ID_Slowo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=292;
 
 --
 -- AUTO_INCREMENT dla tabeli `status_kursu`
@@ -425,7 +427,7 @@ ALTER TABLE `status_kursu`
 -- AUTO_INCREMENT dla tabeli `uzytkownik`
 --
 ALTER TABLE `uzytkownik`
-  MODIFY `ID_Uzytkownik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `ID_Uzytkownik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- Ograniczenia dla zrzutów tabel
