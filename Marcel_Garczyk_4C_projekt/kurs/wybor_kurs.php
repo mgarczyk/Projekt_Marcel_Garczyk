@@ -18,7 +18,6 @@
         require_once("../stale_elementy/navbar.php");
         }
         if(isset($_POST["przycisk_wybor_kurs"])){
-          echo "xd";
           $_SESSION["wybierz_kurs"] = $_POST["wybierz_kurs"];
           header("location: nauka_kurs.php");
         }

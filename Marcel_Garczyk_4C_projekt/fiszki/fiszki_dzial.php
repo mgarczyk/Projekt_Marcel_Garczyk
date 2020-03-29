@@ -24,7 +24,25 @@
                       <h4>Wybierz dział do nauki</h4><br>
                   </div>
                   <br>
-                  <form class="text-center" name="form_dzial" method="post" action="fiszki_nauka.php">
+                  <form class="text-center" name="form_dzial" method="post" action="">
+                    <?php
+                    if(isset($_POST["submit_dzial"])){
+                      require_once("../pliki/logowanie/connect.php");
+                      $_SESSION["dzial"] = $_POST["select_dzial"];
+                      $query_ilosc_slow_dzial = "SELECT Count(Angielski) AS Ilosc_slow FROM slowo
+                      INNER JOIN dzial
+                      ON slowo.ID_dzial = dzial.ID_Dzial
+                      WHERE dzial.Nazwa_dzial Like '$_SESSION[dzial]';";
+                      $result_ilosc_slow_dzial = mysqli_query($connect, $query_ilosc_slow_dzial);
+                      $row_ilosc_slow_dzial = mysqli_fetch_assoc($result_ilosc_slow_dzial);
+                      $ilosc_slow_dzial = $row_ilosc_slow_dzial["Ilosc_slow"];
+                      if($ilosc_slow_dzial == 0){
+                        $_SESSION["pusty_dzial_fiszki"] = "W tym dziale nie dodano jeszcze słówek. Spróbuj ponownie później.<br><br>";
+                      }else{
+                      header("location: fiszki_nauka.php");
+                        }
+                      }
+                     ?>
                     <select class="form-control" name="select_dzial"  >
                       <?php
                       require_once("../pliki/logowanie/connect.php");
@@ -35,6 +53,11 @@
                       }
                        ?>
                     </select><br>
+                    <?php if(isset($_SESSION["pusty_dzial_fiszki"])){
+                        echo $_SESSION["pusty_dzial_fiszki"];
+                        unset($_SESSION["pusty_dzial_fiszki"]);
+                      }
+                      ?>
                     <input type="submit" class="btn-primary btn-max float-right" name="submit_dzial" value="Rozpocznij naukę" /><br><br><br>
                   </form>
                   <a href="../index/index.php"><input type="button" class="btn-outline-primary btn-max float-right" value="Strona główna" /></a><br><br>

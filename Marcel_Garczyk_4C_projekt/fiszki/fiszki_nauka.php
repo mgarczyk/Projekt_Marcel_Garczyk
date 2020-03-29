@@ -99,9 +99,6 @@
                     });
             });
   </script>
-  <?php
-    if(!empty($_POST["select_dzial"])) $_SESSION["dzial"] = $_POST["select_dzial"];
-  ?>
   <body>
     <?php if(isset($_SESSION["email"]) && isset($_SESSION["logged"])){
         ?>

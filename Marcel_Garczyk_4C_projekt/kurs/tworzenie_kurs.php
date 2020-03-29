@@ -17,9 +17,25 @@
         }else{
         require_once("../stale_elementy/navbar.php");
         }
-        require_once("../pliki/kursy/tworzenie_kurs_kod.php");
-
       ?>
+      <?php
+      if(isset($_POST["kurs_dzial"])){
+        $dzial_kurs = $_POST["select_kurs_dzial"];
+        require_once("../pliki/logowanie/connect.php");
+        $query_ilosc_slow_dzial = "SELECT Count(Angielski) AS Ilosc_slow FROM slowo
+        INNER JOIN dzial
+        ON slowo.ID_dzial = dzial.ID_Dzial
+        WHERE dzial.Nazwa_dzial Like '$dzial_kurs';";
+        $result_ilosc_slow_dzial = mysqli_query($connect, $query_ilosc_slow_dzial);
+        $row_ilosc_slow_dzial = mysqli_fetch_assoc($result_ilosc_slow_dzial);
+        $ilosc_slow_dzial = $row_ilosc_slow_dzial["Ilosc_slow"];
+        if($ilosc_slow_dzial == 0){
+          $_SESSION["pusty_dzial_kurs"] = "W tym dziale nie dodano jeszcze słówek. Spróbuj ponownie później.<br><br>";
+        }else{
+             require_once("../pliki/kursy/tworzenie_kurs_kod.php");
+        }
+      }
+       ?>
       <div class="container">
             <div class="row">
                 <div class="col-lg-6 margin margin-top">
@@ -30,7 +46,10 @@
                   <form class="text-center" name="form_kurs" method="post" action="">
                     <select class="form-control" name="select_kurs_dzial">
                       <?php
-                      require_once("../pliki/logowanie/connect.php");
+                      $connect = new mysqli('localhost', 'root', '', 'marcel_garczyk_baza');
+                      if (!$connect) {
+                          die(mysqli_connect_error());
+                      }
                       $query_dzialy = "SELECT Nazwa_Dzial FROM dzial;";
                       $result_dzialy = mysqli_query($connect, $query_dzialy);
                       while($row_dzialy = mysqli_fetch_assoc($result_dzialy)){
@@ -38,10 +57,19 @@
                       }
                        ?>
                     </select><br>
+                    <?php
+                    if(isset($_SESSION["pusty_dzial_kurs"])){
+                      echo $_SESSION["pusty_dzial_kurs"];
+                      unset($_SESSION["pusty_dzial_kurs"]);
+                      }
+                    ?>
+                    <?php
+                       if(isset($_SESSION["message_kurs"]))
+                       echo $_SESSION["message_kurs"]."<br>";
+                       unset($_SESSION["message_kurs"]);
+                    ?>
                     <input type="submit" name="kurs_dzial" class="btn-primary btn-max" value="Stwórz nowy kurs"/><br>
                     <div class="" style="margin-bottom: 30px; margin-top: 30px;">
-                      <?php if(isset($_SESSION["message_kurs"])) echo $_SESSION["message_kurs"]."<br>";
-                            unset($_SESSION["message_kurs"]);?>
                     </div>
                   </form>
                   <a href="wybor_kurs.php"><input type="button" class="btn-primary btn-max" value="Przejdź do wyboru"></a><br><br>

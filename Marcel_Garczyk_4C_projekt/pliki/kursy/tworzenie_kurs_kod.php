@@ -13,7 +13,6 @@
     $result_ilosc_kurs = mysqli_query($connect, $query_kurs_ilosc);
     $row_ilosc_kurs = mysqli_fetch_assoc($result_ilosc_kurs);
     $ilosc_kurs = $row_ilosc_kurs["Ilosc_kurs"];
-    echo $ilosc_kurs;
     if($ilosc_kurs == 0){ //niemozliwe ma byc utwrzenie kolejnych kursów  w tym samym dziale jeżeli poprzedni nie zostal ukończny
     $query_uzytkownik = "INSERT INTO kurs (ID_uzytkownik,Ilosc_slow)
     SELECT ID_uzytkownik, 0
@@ -29,9 +28,10 @@
     $result_dzial = mysqli_query($connect, $query_dzial);
     $result_status = mysqli_query($connect, $query_status);
     mysqli_close($connect);
-    header("loction: wybor_kurs.php");
+    header("loction: tworzenie_kurs.php");
+    $_SESSION["message_kurs"] = "Pomyślnie utworzono kurs.<br>";
   }else{
-    $_SESSION["message_kurs"] = "Utworzyłeś już kurs dotyczący tego działu ukończ go, by móc utworzyć kolejny.";
+    $_SESSION["message_kurs"] = "Utworzyłeś już kurs dotyczący tego działu ukończ go, by móc utworzyć kolejny.<br>";
   }
 
 }
